@@ -1,0 +1,24 @@
+SONG
+	TITLE
+	AUTHOR (song hasmany authors)
+	SECTION (song hasmany sections)
+		TEXT
+DISPLAY
+	BACKGROUND COLOR
+	BACKGROUND IMAGE
+	FONT
+USER
+	Username
+	Password
+	CCLI #
+
+
+======
+GUI
+DISPLAY window
+	Display chosen song
+	With display settings (simple CSS)
+CONTROL window
+	Song list
+	Preview window
+	Live window
