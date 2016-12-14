@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @song.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @song.author %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @song.text %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @song.theme %>
+</p>
+
+<p>
+  <strong>Tempo:</strong>
+  <%= @song.tempo %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @song.key %>
+</p>
+
+<p>
+  <strong>Cclisongno:</strong>
+  <%= @song.CCLISongNo %>
+</p>
+
+<p>
+  <strong>Scripture:</strong>
+  <%= @song.scripture %>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>
