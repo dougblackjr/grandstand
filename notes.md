@@ -1,16 +1,33 @@
-SONG
+## Scaffolds:
+#### SONG
 	TITLE
 	AUTHOR (song hasmany authors)
-	SECTION (song hasmany sections)
-		TEXT
-DISPLAY
+	TEXT (done in markdown)
+	THEME
+	TEMPO
+	KEY
+	CCLISongNo
+	SCRIPTURE
+
+#### DISPLAY
 	BACKGROUND COLOR
 	BACKGROUND IMAGE
 	FONT
+
 USER
 	Username
 	Password
-	CCLI #
+	CCLIOrgNo
+
+AUTHOR
+	FIRST NAME
+	LAST NAME
+	SONG (author hasmany songs)
+
+SETTINGS
+	USER (settings belong to user)
+	SETLIST
+	DISPLAY
 
 
 ======
