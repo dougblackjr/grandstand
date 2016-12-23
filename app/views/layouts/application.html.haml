@@ -10,11 +10,11 @@
 	%header.logo-bar
 		= render 'shared/navbar'
 
-	%content-box.row.off-canvas-content{"data-off-canvas-content"=>""}
-		%section.side-menumedium-2.show-for-medium.columns.off-canvas.position-left{"id"=>"offCanvasLeft","data-off-canvas"=>"","data-transition"=>"push"}
-			%p Side menu
+	%content-box.row
+		%section.side-menu.off-canvas.position-left{"id"=>"offCanvasLeft","data-off-canvas"=>"","data-transition"=>"push"}
+			%p Menu
 
-		%section.main-content.medium-10.small-12.columns.off-canvas-content{"data-off-canvas-content"=>""}
+		%section.main-content.small-9.columns.end.off-canvas-content{"data-off-canvas-content"=>""}
 			%button.button{"type"=>"button", "data-toggle"=>"offCanvasLeft"}
 				%i.fi-list
 			- if notice

@@ -27,10 +27,17 @@
 		color: $primary-color-text;
 	}
 
-	.top-bar li, .top-bar li a {
-		color: $primary-color-text;
-		font-family: 'Baloo Thambi', cursive;
+	.top-bar {
+
+		ul {
+			background-color: $primary-color-dark;
+		}
 		
+		li, li a {
+			color: $primary-color-text;
+			font-family: 'Baloo Thambi', cursive;
+			font-size: 0.9rem;
+		}
 	}
 
 	.logo-text {
@@ -49,13 +56,11 @@
 
 // Side nav side-menu
 .side-menu {
-	height: 100vh;
 	background-color: $primary-color-light;
 }
 
 // Main content .main-content
 .main-content {
-	height: 100vh;
 }
 
 .footer-content {

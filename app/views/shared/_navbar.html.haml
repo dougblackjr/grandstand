@@ -1,8 +1,8 @@
 .top-bar
-	.topnav.row.column
-		.medium-1.columns
+	.topnav.expanded.row
+		.logo-text.medium-1.columns
 			%span.logo-text Grandstand
-		.medium-4-last.columns
+		.user-text.medium-4.columns
 			%ul.menu
 				- if user_signed_in?
 					%li Logged in as #{current_user.email}
