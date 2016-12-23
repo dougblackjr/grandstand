@@ -18,7 +18,6 @@ gem 'paperclip'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'bootstrap-sass'
-gem 'bootstrap'
 
 group :development, :test do
   gem 'byebug'
