@@ -1,0 +1,66 @@
+// Header Logo Bar
+.logo-bar {
+	// position: absolute;
+	top: 0;
+	width: 100%;
+
+	.topnav {
+		margin: 0;
+
+		button {
+			margin-bottom: 0.3rem;
+			background-color: $primary-color-dark;
+
+			i {
+				font-size: 2.2rem;
+			}
+		}
+	}
+
+	.top-bar {
+		background-color: $primary-color-dark;
+		paddng: 0;
+	}
+
+	.title-bar .button {
+		background-color: $primary-color-dark;
+		color: $primary-color-text;
+	}
+
+	.top-bar li, .top-bar li a {
+		color: $primary-color-text;
+		font-family: 'Baloo Thambi', cursive;
+		
+	}
+
+	.logo-text {
+		color: $primary-color-text;
+		font-family: 'Baloo Thambi', cursive;
+		font-size: 1.4rem;
+	}
+
+	.user-menu a, .title-bar-title {
+		color: $primary-color-text;
+		font-family: 'Baloo Thambi', cursive;
+		font-size: 1.2rem;
+	}
+
+}
+
+// Side nav side-menu
+.side-menu {
+	height: 100vh;
+	background-color: $primary-color-light;
+}
+
+// Main content .main-content
+.main-content {
+	height: 100vh;
+}
+
+.footer-content {
+	position: absolute;
+	bottom: 0;
+	min-width: 100%;
+	background-color: $primary-color-dark;
+}

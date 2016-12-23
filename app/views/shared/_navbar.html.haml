@@ -1,0 +1,12 @@
+.top-bar
+	.topnav.row.column
+		.medium-1.columns
+			%span.logo-text Grandstand
+		.medium-4-last.columns
+			%ul.menu
+				- if user_signed_in?
+					%li Logged in as #{current_user.email}
+					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
+				- else
+					%li
+						= link_to "Log In", new_user_session_path
