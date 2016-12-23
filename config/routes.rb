@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :songs
-  resources :authors
+	devise_for :users
+	resources :songs
+	resources :authors
 
-  root 'welcome#index'
+	authenticated :user do
+		root "songs#index", as: "authenticated_root"
+	end
+
+	root "welcome#index"
 
 end
