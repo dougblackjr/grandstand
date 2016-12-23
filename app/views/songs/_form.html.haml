@@ -1,0 +1,9 @@
+= simple_form_for(@song) do |f|
+  =f.input :title
+  =f.input :author
+  =f.text_area :text
+  =f.input :theme
+  =f.number_field :tempo
+  =f.input :key
+  =f.number_field :CCLISongNo
+  = f.button :submit

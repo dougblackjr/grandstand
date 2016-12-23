@@ -1,0 +1,10 @@
+%h1 Listing Songs
+
+.song-list
+  - @songs.each do |song|
+    .song
+      %h3= song.title
+      %h5= song.author
+      %p #{link_to 'Show', song} ~ #{link_to 'Edit', edit_song_path(song)} ~ #{link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }}
+
+= link_to 'New Song', new_song_path

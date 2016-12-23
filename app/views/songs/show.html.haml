@@ -1,0 +1,10 @@
+%h1 #{@song.title}
+%h2 By #{@song.author}
+%p Theme: #{@song.theme} ~ Tempo: #{@song.tempo} ~ Key: #{@song.key}
+%p CCLI No: #{@song.CCLISongNo}
+
+.song-text
+  = @song.text
+
+= link_to 'Edit', edit_song_path(@song)
+= link_to 'Back', songs_path
