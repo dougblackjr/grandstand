@@ -1,0 +1,11 @@
+%h1 Listing Authors
+
+.author-list
+  - @authors.each do |author|
+    .author
+      %p=author.first_name
+      %p= author.last_name
+      = link_to 'Show', author
+      = link_to 'Edit', edit_author_path(author)
+      = link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'New Author', new_author_path
