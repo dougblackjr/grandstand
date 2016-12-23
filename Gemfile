@@ -17,7 +17,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'simple_form'
 gem 'carrierwave'
-gem 'bootstrap-sass'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'byebug'
