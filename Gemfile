@@ -36,12 +36,13 @@ gem 'mini_magick', '~> 4.3'
 gem 'carrierwave-video'
 gem 'streamio-ffmpeg'
 
-# Markdown gems
+# Youtube links
+gem 'youtube_addy'
 
-# MD to HTML
+# Markdown to HTML
 gem 'reverse_markdown', '~> 1.0', '>= 1.0.3'
 
-# HTML to MD
+# HTML to Markdown
 gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 
 

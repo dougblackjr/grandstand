@@ -11,4 +11,4 @@
 			- else
 				= image_tag @medium.upload.url
 		- if @medium.mediatype == 'youtube'
-			= @medium.url
+			%iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/#{YouTubeAddy.extract_video_id(@medium.url)}", :title => "YouTube video player", :width => "640"}
