@@ -28,13 +28,9 @@ gem 'simple_form'
 # Styling
 gem 'foundation-rails'
 
-# Image uploading
+# Image and video uploading
 gem 'carrierwave'
 gem 'mini_magick', '~> 4.3'
-
-# Video uploading
-gem 'carrierwave-video'
-gem 'streamio-ffmpeg'
 
 # Youtube links
 gem 'youtube_addy'
