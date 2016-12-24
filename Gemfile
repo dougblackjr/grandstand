@@ -19,6 +19,13 @@ gem 'simple_form'
 gem 'carrierwave'
 gem 'foundation-rails'
 
+# markdown gems
+# md to html
+gem 'reverse_markdown', '~> 1.0', '>= 1.0.3'
+# html to md
+gem 'redcarpet', '~> 3.3', '>= 3.3.4'
+
+
 group :development, :test do
   gem 'byebug'
 end
