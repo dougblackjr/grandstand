@@ -1,0 +1,12 @@
+.song-form.row
+  = simple_form_for(@medium) do |f|
+    = f.error_notification
+    .medium-6.columns
+      = f.input :title
+      = f.input :type, :collection => %w[audio image youtube video]
+      = f.hidden_field :user, :input_html => { :value => current_user.id }, label: false, disabled: true, hidden: true
+      = f.input :url
+    .medium-6.columns
+      = f.label :upload, 'Media Upload'
+      = f.file_field :upload
+      = f.button :submit
