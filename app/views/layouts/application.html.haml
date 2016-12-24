@@ -3,6 +3,7 @@
 %head
 	%title Grandstand - Music Display
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= favicon_link_tag 'favicon.png'
 	= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Baloo+Thambi|Montserrat'
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	= csrf_meta_tags
@@ -11,8 +12,7 @@
 		= render 'shared/navbar'
 
 	%content-box.row
-		%section.side-menu.off-canvas.position-left{"id"=>"offCanvasLeft","data-off-canvas"=>"","data-transition"=>"push"}
-			%p.menu-title Menu
+		= render 'shared/sidenav'
 
 		%section.main-content.small-9.columns.end.off-canvas-content{"data-off-canvas-content"=>""}
 			%button.button{"type"=>"button", "data-toggle"=>"offCanvasLeft"}
