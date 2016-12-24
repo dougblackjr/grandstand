@@ -12,7 +12,6 @@
 	title
 	type
 		select field
-		<%= f.select :temperature, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
 		audio
 		image
 		youtube

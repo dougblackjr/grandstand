@@ -11,18 +11,37 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# OTHER GEMS
+
+# HAML for coding
 gem 'haml'
+
+# Better error reporting
 gem 'better_errors'
+
+# User management
 gem 'devise'
+
+# Better forms
 gem 'simple_form'
+
+# Styling
 gem 'foundation-rails'
+
+# Image uploading
 gem 'carrierwave'
 gem 'mini_magick', '~> 4.3'
 
-# markdown gems
-# md to html
+# Video uploading
+gem 'carrierwave-video'
+gem 'streamio-ffmpeg'
+
+# Markdown gems
+
+# MD to HTML
 gem 'reverse_markdown', '~> 1.0', '>= 1.0.3'
-# html to md
+
+# HTML to MD
 gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 
 
