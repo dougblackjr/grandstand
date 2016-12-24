@@ -1,1 +1,7 @@
-%p Hello world.
+.content
+	%h1.content_heading Welcome To My Product
+	%p.content__teaser Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit qui voluptatum enim est deserunt assumenda, aspernatur quam aperiam, fugiat minus aliquam quisquam hic repudiandae nobis architecto ipsa numquam facilis nisi!
+	%a.content__cta Buy It Now!
+	
+	.video
+		= video_tag(["demo.mp4", "demo.webm"], controls: false, loop: true, autoplay: true, muted: true, autobuffer: true)

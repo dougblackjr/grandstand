@@ -12,15 +12,12 @@
 
 	%content-box.row
 		%section.side-menu.off-canvas.position-left{"id"=>"offCanvasLeft","data-off-canvas"=>"","data-transition"=>"push"}
-			%p Menu
+			%p.menu-title Menu
 
 		%section.main-content.small-9.columns.end.off-canvas-content{"data-off-canvas-content"=>""}
 			%button.button{"type"=>"button", "data-toggle"=>"offCanvasLeft"}
 				%i.fi-list
-			- if notice
-				%p.alert.alert-success= notice
-			- if alert
-				%p.alert.alert-danger= alert
+			= render 'shared/alerts'
 			= yield
 	
 	%footer.footer-content.row
