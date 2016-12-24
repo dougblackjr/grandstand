@@ -14,10 +14,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml'
 gem 'better_errors'
 gem 'devise'
-gem 'paperclip'
 gem 'simple_form'
-gem 'carrierwave'
 gem 'foundation-rails'
+gem 'carrierwave'
+gem 'mini_magick', '~> 4.3'
 
 # markdown gems
 # md to html
