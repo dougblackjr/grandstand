@@ -5,8 +5,11 @@
       = f.input :title
       = f.input :mediatype, :collection => %w[audio image youtube video]
       = f.hidden_field :user, :input_html => { :value => current_user.id }, label: false, disabled: true, hidden: true
+      -# = f.label :url, 'Image URL', 'class' => "image-url__label"
+      -# = f.label :url, 'Youtube Video ID', 'class' => "youtube-url__label"
       = f.input :url
     .medium-6.columns
-      = f.label :upload, 'Media Upload'
-      = f.file_field :upload
-      = f.button :submit
+      .image-upload
+        = f.label :upload, 'Image Upload'
+        = f.file_field :upload
+        = f.button :submit
