@@ -1,13 +1,14 @@
-%h2= @medium.title
-%p= @medium.mediatype
-= image_tag @medium.upload.url
--# - if @medium.mediatype == 'image'
-	-# - if @medium.url != ''
-	-# 	%p IMAGE URL
-	-# 	= image_tag @medium.url
-	-# - else
-	-# 	%p IMAGE UPLAOD
-	-# 	%p= @medium.upload.url
-
-= link_to 'Edit', edit_medium_path(@medium)
-= link_to 'Back', media_path
+.row
+	.medium-6.columns
+		%h2= @medium.title
+		%p= @medium.mediatype
+		%p #{link_to 'Edit', edit_medium_path(@medium)} ~ #{link_to 'Destroy', @medium, method: :delete, data: { confirm: 'Are you sure?' }} ~ #{link_to 'Back', media_path}
+	.medium-6.columns
+		= image_tag @medium.upload.url
+		-# - if @medium.mediatype == 'image'
+			-# - if @medium.url != ''
+			-# 	%p IMAGE URL
+			-# 	= image_tag @medium.url
+			-# - else
+			-# 	%p IMAGE UPLAOD
+			-# 	%p= @medium.upload.url
