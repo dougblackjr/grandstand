@@ -1,9 +1,19 @@
-= simple_form_for(@song) do |f|
-  =f.input :title
-  =f.input :author
-  =f.text_area :text
-  =f.input :theme
-  =f.number_field :tempo
-  =f.input :key
-  =f.number_field :CCLISongNo
-  = f.button :submit
+.song-form.row
+	= simple_form_for(@song) do |f|
+		.medium-6.columns
+			=f.input :title
+			=f.input :author
+			=f.input :theme
+			.row
+				.medium-6.columns
+					=f.input :key, :collection => %w[A Bb B C C# Db D Eb E F F#/Gb G G# Ab Am Bbm Bm Cm C#m Dm Ebm Em Fm F#m Gm G#m]
+				.medium-6.columns
+					=f.label :tempo, 'Tempo'
+					=f.number_field :tempo
+			=f.label :CCLISongNo, 'CCLI Song Number'
+			=f.number_field :CCLISongNo
+			= f.button :submit
+		.medium-6.columns.song-text
+			%h4 Song text
+			%p Use # to denote song section, and then type text below
+			=f.text_area :text
