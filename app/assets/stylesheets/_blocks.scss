@@ -69,6 +69,21 @@
 
 // Main content .main-content
 .main-content {
+	.song-text {
+
+		border-radius: 3px;
+    	border: 1px solid $accent-color;
+		height: 75vh;
+		overflow: auto;
+
+		h1 {
+			font-size: 1rem;
+		}
+
+		p {
+			font-size: 0.7rem;
+		}
+	}
 }
 
 .footer-content {
