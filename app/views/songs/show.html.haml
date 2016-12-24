@@ -1,14 +1,17 @@
 .row
 	.medium-6.columns
-		%h1 #{@song.title}
+		%h2 #{@song.title}
 		%h3 #{@song.author}
-		%p Theme: #{@song.theme}
-		%p Tempo: #{@song.tempo}
-		%p Key: #{@song.key}
-		%p CCLI No: #{@song.CCLISongNo}
+		- if @song.theme
+			%p Theme: #{@song.theme}
+		- if @song.tempo
+			%p Tempo: #{@song.tempo}
+		- if @song.key
+			%p Key: #{@song.key}
+		- if @song.CCLISongNo
+			%p CCLI No: #{@song.CCLISongNo}
+		= link_to 'Edit', edit_song_path(@song)
+		= link_to 'Back', songs_path
 	.medium-6.columns
 		.song-text
 			= markdown(@song.text)
-
-= link_to 'Edit', edit_song_path(@song)
-= link_to 'Back', songs_path
