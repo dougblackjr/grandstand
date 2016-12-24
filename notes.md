@@ -1,7 +1,6 @@
 ## Scaffolds:
 #### SONG
 	TITLE
-	AUTHOR (song hasmany authors)
 	TEXT (done in markdown)
 	THEME
 	TEMPO
@@ -9,25 +8,43 @@
 	CCLISongNo
 	SCRIPTURE
 
+#### MEDIA
+	title
+	type
+		select field
+		<%= f.select :temperature, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
+		audio
+		image
+		youtube
+		video
+	user
+	url
+	mediaupload
+
 #### DISPLAY
 	BACKGROUND COLOR
 	BACKGROUND IMAGE
 	FONT
+	FONT SIZE
+
+#### SETLIST
+	dateCreated
+	title
+	song (has many)
+	media (has many)
+	comments
 
 USER
 	Username
 	Password
 	CCLIOrgNo
 
-AUTHOR
-	FIRST NAME
-	LAST NAME
-	SONG (author hasmany songs)
-
 SETTINGS
 	USER (settings belong to user)
-	SETLIST
-	DISPLAY
+	Display-BACKGROUND COLOR
+	Display-BACKGROUND IMAGE
+	Display-FONT
+	Display-FONT SIZE
 
 
 ======

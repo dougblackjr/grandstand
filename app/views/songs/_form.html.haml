@@ -12,7 +12,8 @@
 					=f.number_field :tempo
 			=f.label :CCLISongNo, 'CCLI Song Number'
 			=f.number_field :CCLISongNo
-			= f.button :submit
+			=f.button :submit
+			=link_to 'Back', @song
 		.medium-6.columns.song-text
 			%h4 Song text
 			%p Use # to denote song section, and then type text below
