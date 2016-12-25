@@ -88,6 +88,24 @@
 			height: 50vh;
 		}
 	}
+
+	.media-form {
+		.image-upload {
+			display: none;
+		}
+
+		.video-upload {
+			display: none;
+		}
+
+		.youtube-upload {
+			display: none;
+		}
+
+		.audio-upload {
+			display: none;
+		}
+	}
 }
 
 .footer-content {

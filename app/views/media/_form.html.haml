@@ -1,18 +1,62 @@
 .song-form.row
-  = simple_form_for(@medium) do |f|
-    = f.error_notification
-    .medium-6.columns
-      = f.input :title
-      = f.input :mediatype, :collection => %w[audio image youtube video]
-      = f.hidden_field :user, :input_html => { :value => current_user.id }, label: false, disabled: true, hidden: true
-      -# = f.label :url, 'Image URL', 'class' => "image-url__label"
-      -# = f.label :url, 'Youtube Video ID', 'class' => "youtube-url__label"
-      = f.input :url
-    .medium-6.columns
-      .image-upload
-        = f.label :upload, 'Image Upload'
-        = f.file_field :upload
-      .video-upload
-        = f.label :videoupload, 'Video Upload'
-        = f.file_field :videoupload
-      = f.button :submit
+	= simple_form_for(@medium) do |f|
+		= f.error_notification
+		.medium-6.columns
+			= f.input :title
+			= f.input :mediatype, :collection => %w[audio image youtube video], :class=>"typeSelect"
+			= f.hidden_field :user, :input_html => { :value => current_user.id }, label: false, disabled: true, hidden: true
+			= f.button :submit
+		.media-form.medium-6.columns
+			%div.audio-upload{:id=>'audio-upload'}
+				= f.input :url
+				= f.label :upload, 'or upload an audio file'
+				= f.file_field :upload
+			%div.image-upload{:id=>'image-upload'}
+				= f.input :url
+				= f.label :upload, 'or upload an image'
+				= f.file_field :upload
+			%div.video-upload{:id=>'video-upload'}
+				= f.input :url
+				= f.label :videoupload, 'Video Upload'
+				= f.file_field :videoupload
+			%div.youtube-upload{:id=>'youtube-upload'}
+				= f.input :url
+
+:javascript
+	var selectField = document.getElementById('medium_mediatype');
+	var imageDiv = document.getElementById('image-upload');
+	var videoDiv = document.getElementById('video-upload');
+	var audioDiv = document.getElementById('audio-upload');
+	var youtubeDiv = document.getElementById('youtube-upload');
+	
+	selectField.onchange = function() {
+		 if(this.value == 'image') {
+			 imageDiv.style['display'] = 'block';
+			 videoDiv.style['display'] = 'none';
+			 audioDiv.style['display'] = 'none';
+			 youtubeDiv.style['display'] = 'none';
+		 }
+
+		 if(this.value == 'video') {
+			 imageDiv.style['display'] = 'none';
+			 videoDiv.style['display'] = 'block';
+			 audioDiv.style['display'] = 'none';
+			 youtubeDiv.style['display'] = 'none';
+		 }
+
+		 if(this.value == 'youtube') {
+			 imageDiv.style['display'] = 'none';
+			 videoDiv.style['display'] = 'none';
+			 audioDiv.style['display'] = 'none';
+			 youtubeDiv.style['display'] = 'block';
+		 }
+
+		 if(this.value == 'audio') {
+			 imageDiv.style['display'] = 'none';
+			 videoDiv.style['display'] = 'none';
+			 audioDiv.style['display'] = 'block';
+			 youtubeDiv.style['display'] = 'none';
+		 }
+
+	};
+</script>
