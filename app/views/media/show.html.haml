@@ -12,5 +12,7 @@
 				= image_tag @medium.upload.url
 		- if @medium.mediatype == 'video'
 			= video_tag(@medium.videoupload.url, controls: true, loop: false, autoplay: true, muted: true, autobuffer: true)
+		- if @medium.mediatype == 'audio'
+			= audio_tag(@medium.audioupload.url, autoplay: false, controls: true)
 		- if @medium.mediatype == 'youtube'
 			%iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/#{YouTubeAddy.extract_video_id(@medium.url)}", :title => "YouTube video player", :width => "640"}

@@ -35,6 +35,9 @@ gem 'mini_magick', '~> 4.3'
 # Youtube links
 gem 'youtube_addy'
 
+# Audio files
+gem 'carrierwave-audio'
+
 # Markdown to HTML
 gem 'reverse_markdown', '~> 1.0', '>= 1.0.3'
 
