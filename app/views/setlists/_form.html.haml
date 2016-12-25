@@ -1,10 +1,14 @@
 .setlist-form.row
-	.medium-6.columns
-		= simple_form_for(@setlist) do |f|
-			= f.error_notification
-
+	= simple_form_for(@setlist) do |f|
+		= f.error_notification
+		.medium-6.columns
 			= f.input :title
 			= f.input :date, as: :date, html5: true
 			= f.hidden_field :user, :input_html => { :value => current_user.id }, label: false, disabled: true, hidden: true
 			= f.input :comments
 			= f.button :submit
+		.medium-6.columns
+			= f.label :song_id, 'Songs'
+			= f.collection_select :song_id, Song.all, :id, :title, { :multiple => true }
+			= f.label :medium_id, 'Media'
+			= f.collection_select :medium_id, Medium.all, :id, :title, { :multiple => true }
