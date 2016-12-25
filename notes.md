@@ -1,24 +1,11 @@
 ## Scaffolds:
-#### SONG
-	TITLE
-	TEXT (done in markdown)
-	THEME
-	TEMPO
-	KEY
-	CCLISongNo
-	SCRIPTURE
-
-#### MEDIA
+#### SETLIST
 	title
-	type
-		select field
-		audio
-		image
-		youtube
-		video
+	date
 	user
-	url
-	mediaupload
+	song (has many)
+	media (has many)
+	comments
 
 #### DISPLAY
 	BACKGROUND COLOR
@@ -26,17 +13,11 @@
 	FONT
 	FONT SIZE
 
-#### SETLIST
-	dateCreated
-	title
-	song (has many)
-	media (has many)
-	comments
-
 USER
 	Username
 	Password
 	CCLIOrgNo
+	setlist (has many)
 
 SETTINGS
 	USER (settings belong to user)

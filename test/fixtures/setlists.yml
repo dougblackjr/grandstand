@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: 2016-12-24
+  user_id: 
+  song_id: 
+  medium_id: 
+  comments: MyText
+
+two:
+  title: MyString
+  date: 2016-12-24
+  user_id: 
+  song_id: 
+  medium_id: 
+  comments: MyText
