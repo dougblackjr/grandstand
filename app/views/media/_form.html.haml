@@ -1,26 +1,48 @@
 .song-form.row
 	= simple_form_for(@medium) do |f|
 		= f.error_notification
+		- if @medium.errors.any?
+			#errors
+				%h2
+					= pluralize(@medium.errors.count, "error")
+					prevented this media from saving
+				%ul
+					- @medium.errors.full_messages.each do |msg|
+						%li= msg
 		.medium-6.columns
 			= f.input :title
-			= f.input :mediatype, :collection => %w[audio image youtube video], :class=>"typeSelect"
+			= f.input :mediatype, :collection => %w[audio image youtube video], :class=>"typeSelect", :label=>'Media Type'
 			= f.hidden_field :user, :input_html => { :value => current_user.id }, label: false, disabled: true, hidden: true
+			= f.label :description, 'Description'
+			= f.text_area :description
 			= f.button :submit
-		.media-form.medium-6.columns
-			%div.audio-upload{:id=>'audio-upload'}
+		.media-form.medium-4.columns
+			%div.audio-upload{:id=>'audio-upload', class: @medium.mediatype == 'audio' ? 'selected' : nil}
 				= f.input :url
 				= f.label :audioupload, 'or upload an audio file'
 				= f.file_field :audioupload
-			%div.image-upload{:id=>'image-upload'}
+			%div.image-upload{:id=>'image-upload', class: @medium.mediatype == 'image' ? 'selected' : nil}
 				= f.input :url
 				= f.label :upload, 'or upload an image'
 				= f.file_field :upload
-			%div.video-upload{:id=>'video-upload'}
+			%div.video-upload{:id=>'video-upload', class: @medium.mediatype == 'video' ? 'selected' : nil}
 				= f.input :url
 				= f.label :videoupload, 'Video Upload'
 				= f.file_field :videoupload
-			%div.youtube-upload{:id=>'youtube-upload'}
+			%div.youtube-upload{:id=>'youtube-upload', class: @medium.mediatype == 'youtube' ? 'selected' : nil}
 				= f.input :url
+		.media-preview.medium-2.show-for-medium.columns
+			- if @medium.mediatype == 'image'
+				- if @medium.url != ''
+					= image_tag @medium.url
+				- else
+					= image_tag @medium.upload.url
+			- if @medium.mediatype == 'video'
+				= video_tag(@medium.videoupload.url, controls: true, loop: false, autoplay: true, muted: true, autobuffer: true)
+			- if @medium.mediatype == 'audio'
+				= audio_tag(@medium.audioupload.url, autoplay: false, controls: true)
+			- if @medium.mediatype == 'youtube'
+				%iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/#{YouTubeAddy.extract_video_id(@medium.url)}", :title => "YouTube video player", :width => "640"}
 
 :javascript
 	var selectField = document.getElementById('medium_mediatype');
@@ -28,7 +50,7 @@
 	var videoDiv = document.getElementById('video-upload');
 	var audioDiv = document.getElementById('audio-upload');
 	var youtubeDiv = document.getElementById('youtube-upload');
-	
+
 	selectField.onchange = function() {
 		 if(this.value == 'image') {
 			 imageDiv.style['display'] = 'block';

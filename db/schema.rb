@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225004351) do
+ActiveRecord::Schema.define(version: 20161225010928) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "first_name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20161225004351) do
     t.string   "mediatype"
     t.string   "videoupload"
     t.string   "audioupload"
+    t.text     "description"
   end
 
   add_index "media", ["user_id"], name: "index_media_on_user_id"
