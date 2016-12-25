@@ -44,6 +44,9 @@ gem 'reverse_markdown', '~> 1.0', '>= 1.0.3'
 # HTML to Markdown
 gem 'redcarpet', '~> 3.3', '>= 3.3.4'
 
+# Multiselect for Setlist builder
+gem 'multi-select-rails'
+
 
 group :development, :test do
   gem 'byebug'
