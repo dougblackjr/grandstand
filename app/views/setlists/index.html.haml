@@ -1,0 +1,9 @@
+%h1 Setlists
+
+.setlist-list
+  - @setlists.each do |setlist|
+    .setlist
+      %a{href: (url_for setlist)}
+        #{setlist.title} ~ #{setlist.date}
+
+= link_to 'New Setlist', new_setlist_path
