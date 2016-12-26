@@ -3,8 +3,8 @@
     %h2 #{@setlist.title}
     %h3 #{@setlist.date}
     %div= @setlist.comments
-    = link_to 'Edit', edit_song_path(@setlist)
-    = link_to 'Back', songs_path
+    = link_to 'Edit', edit_setlist_path(@setlist)
+    = link_to 'Back', setlists_path
   .medium-6.columns
     .setlist-text
       %p list of songs and media in order somehow

@@ -12,3 +12,6 @@
 			= f.collection_select :song_id, Song.all, :id, :title, { :multiple => true }
 			= f.label :medium_id, 'Media'
 			= f.collection_select :medium_id, Medium.all, :id, :title, { :multiple => true }
+:javascript
+	$('#setlist_song_id').multiSelect();
+	$('#setlist_medium_id').multiSelect();
